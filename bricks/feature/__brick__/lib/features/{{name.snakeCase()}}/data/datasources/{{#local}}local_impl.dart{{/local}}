@@ -1,0 +1,62 @@
+import '../../../../core/shared/shared.dart';
+import '../../{{name.snakeCase()}}.dart';
+
+class {{name.pascalCase()}}LocalDataSourceImpl extends {{name.pascalCase()}}LocalDataSource {
+  final Map<{{#identifier}}String{{/identifier}}{{^identifier}}int{{/identifier}}, {{name.pascalCase()}}Entity> _cache = {};
+
+  @override
+  FutureOr<void> add({
+    required {{name.pascalCase()}}Entity {{name.camelCase()}},
+  }) {
+    _cache[{{name.camelCase()}}.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}] = {{name.camelCase()}};    
+  }
+
+  @override
+  FutureOr<void> addAll({
+    required List<{{name.pascalCase()}}Entity> items,
+  }) {
+    for (final item in items) {
+      _cache[item.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}] = item;
+    }
+  }
+
+  @override
+  FutureOr<void> update({
+    required {{name.pascalCase()}}Entity {{name.camelCase()}},
+  }) {
+    _cache[{{name.camelCase()}}.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}] = {{name.camelCase()}};    
+  }
+
+  @override
+  FutureOr<void> remove({
+    {{#identifier}}
+    required String guid,
+    {{/identifier}}
+    {{^identifier}}
+    required int id,
+    {{/identifier}}
+  }) {
+    _cache.remove({{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}});    
+  }
+
+  @override
+  FutureOr<void> removeAll() {
+    _cache.clear();    
+  }
+
+  @override
+  FutureOr<{{name.pascalCase()}}Entity> find({
+    {{#identifier}}
+    required String guid,
+    {{/identifier}}
+    {{^identifier}}
+    required int id,
+    {{/identifier}}
+  }) {
+    final item = _cache[{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}];
+    if (item == null) {
+      throw {{name.pascalCase()}}NotFoundInLocalCacheFailure();
+    }
+    return item;
+  }
+}

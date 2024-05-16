@@ -1,0 +1,32 @@
+name: feature
+description: A new brick created with the Mason CLI.
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.53 <0.1.0"
+
+vars:
+  name:
+    type: string
+    default: NewFeature
+    prompt: What is the name of the feature?
+
+  local:
+    type: boolean
+    default: false
+    prompt: Does the feature need a local data source?
+
+  identifier:
+    type: boolean
+    default: true
+    prompt: Is your identifier GUID based?
+
+  pagination:
+    type: boolean
+    default: true
+    prompt: Do you need pagination?
+
+  blocs:
+    type: array
+    prompt: What are the blocs do you need for this feature?
+    values: [create, update, delete, search, find, read, refresh]

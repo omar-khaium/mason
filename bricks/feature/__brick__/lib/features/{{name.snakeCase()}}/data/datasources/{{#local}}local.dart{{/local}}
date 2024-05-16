@@ -1,0 +1,36 @@
+import '../../../../core/shared/shared.dart';
+import '../../{{name.snakeCase()}}.dart';
+
+abstract class {{name.pascalCase()}}LocalDataSource { 
+  FutureOr<void> add({
+    required {{name.pascalCase()}}Entity {{name.camelCase()}},
+  });
+
+  FutureOr<void> addAll({
+    required List<{{name.pascalCase()}}Entity> items,
+  });
+
+  FutureOr<void> update({
+    required {{name.pascalCase()}}Entity {{name.camelCase()}},
+  });
+
+  FutureOr<void> remove({
+    {{#identifier}}
+    required String guid,
+    {{/identifier}}
+    {{^identifier}}
+    required int id,
+    {{/identifier}}
+  });
+
+  FutureOr<void> removeAll();
+
+  FutureOr<{{name.pascalCase()}}Entity> find({
+    {{#identifier}}
+    required String guid,
+    {{/identifier}}
+    {{^identifier}}
+    required int id,
+    {{/identifier}}
+  });
+}
