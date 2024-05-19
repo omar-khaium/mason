@@ -16,6 +16,11 @@ vars:
     default: false
     prompt: Does the feature need a local data source?
 
+  extension:
+    type: boolean
+    default: false
+    prompt: Does the feature requires extension?
+
   identifier:
     type: boolean
     default: true

@@ -1,7 +1,17 @@
-import 'package:flutter/material.dart';
+import 'core/config/config.dart';
+import 'core/shared/shared.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+  await AppConfig.init();
+
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => sl<ThemeBloc>()),
+      ],
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -9,11 +19,23 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    FlutterNativeSplash.remove();
+
+    return ScreenUtilInit(
+      designSize: const Size(360, 800),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) => child!,
+      child: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: (_, state) {
+          final theme = state.scheme;
+          return MaterialApp.router(
+            routerConfig: router,
+            debugShowCheckedModeBanner: false,
+            theme: AppConfig.theme(context: context, theme: theme),
+            darkTheme: AppConfig.theme(context: context, theme: theme),
+          );
+        },
       ),
     );
   }

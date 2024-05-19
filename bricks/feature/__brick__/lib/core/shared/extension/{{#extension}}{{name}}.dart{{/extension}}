@@ -1,0 +1,9 @@
+import '../../../features/{{name.snakeCase()}}/{{name.snakeCase()}}.dart';
+
+extension {{name.pascalCase()}}EntityExtension on {{name.pascalCase()}}Entity {
+  // TODO: Add extension methods
+}
+
+extension {{name.pascalCase()}}ModelExtension on {{name.pascalCase()}}Model {
+  // TODO: Add extension methods
+}

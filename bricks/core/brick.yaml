@@ -1,0 +1,23 @@
+name: core
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.53 <0.1.0"
+
+vars:
+  splash_screen:
+    type: boolean
+    default: false
+    prompt: Are you using a splash screen?
+
+  animation:
+    type: boolean
+    default: true 
+    prompt: Are you using animation or shimmer?
+
+  responsive:
+    type: boolean
+    default: false
+    prompt: Is your app responsive?
