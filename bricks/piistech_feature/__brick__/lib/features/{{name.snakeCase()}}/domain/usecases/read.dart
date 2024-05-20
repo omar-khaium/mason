@@ -1,10 +1,10 @@
 import '../../../../core/shared/shared.dart';
 import '../../{{name.snakeCase()}}.dart';
 
-class ReadAll{{name.pascalCase()}}UseCase {
+class Read{{name.pascalCase()}}UseCase {
   final {{name.pascalCase()}}Repository repository;
 
-  ReadAll{{name.pascalCase()}}UseCase({
+  Read{{name.pascalCase()}}UseCase({
     required this.repository,
   });
 

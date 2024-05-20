@@ -22,3 +22,8 @@ vars:
     type: boolean
     default: false
     prompt: Is your app responsive?
+
+  notification:
+    type: boolean
+    default: false
+    prompt: Do you need notification?

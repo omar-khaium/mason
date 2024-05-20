@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2+1
+
+- Fixed `usecase` name typo.
+
 ## 0.1.1+1
 
 - Fixed dependency injection typo in the config file.
