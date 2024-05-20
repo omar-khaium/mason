@@ -1,5 +1,6 @@
-name: core
-description: A new brick created with the Mason CLI.
+name: piistech_core
+description: A new brick to generate the core of the app complying with Clean Architecture.
+repository: https://github.com/piistech/mason.git
 
 version: 0.1.0+1
 
@@ -14,7 +15,7 @@ vars:
 
   animation:
     type: boolean
-    default: true 
+    default: true
     prompt: Are you using animation or shimmer?
 
   responsive:

@@ -1,6 +1,7 @@
-name: feature
-description: A new brick created with the Mason CLI.
+name: piistech_feature
+description: A new brick to generate feature with Clean Architecture styling.
 version: 0.1.0+1
+repository: https://github.com/piistech/mason.git
 
 environment:
   mason: ">=0.1.0-dev.53 <0.1.0"

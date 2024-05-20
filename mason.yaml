@@ -3,3 +3,5 @@ bricks:
     path: bricks/feature
   core:
     path: bricks/core
+  clean_core:
+    path: bricks/clean_core

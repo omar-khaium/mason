@@ -5,7 +5,9 @@ final sl = GetIt.instance;
 Future<void> _setupDependencies() async {
   await _core;
 
-  await Future.wait([]);
+  await Future.wait([
+    //! mason:linking-dependencies - DO NOT REMOVE THIS COMMENT --------------------------->
+  ]);
 }
 
 Future<void> get _core async {
