@@ -20,5 +20,3 @@ export 'domain/usecases/update.dart';
 {{#blocs}}
 export 'presentation/bloc/{{.}}_bloc.dart';
 {{/blocs}}
-
-export 'presentation/pages/{{name.snakeCase()}}.dart';

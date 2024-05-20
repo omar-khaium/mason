@@ -29,7 +29,7 @@ void run(HookContext context) async {
       dependencyBuffer.writeln(line);
     }
     if (line.contains('//! mason:linking-dependencies')) {
-      dependencyBuffer.writeln('_${name.camelCase}Dependencies,');
+      dependencyBuffer.writeln('${name.camelCase}Dependencies,');
     }
   }
   await dependencyFile.writeAsString('$dependencyBuffer');
