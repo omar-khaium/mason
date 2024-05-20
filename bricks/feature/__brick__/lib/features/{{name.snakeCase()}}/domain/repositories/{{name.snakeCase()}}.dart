@@ -29,19 +29,19 @@ abstract class {{name.pascalCase()}}Repository {
     {{/identifier}}
   });
 
-  FutureOr<Either<Failure, {{#pagination}}{{name.pascalCase()}}EntityPaginatedResponse{{/pagination}}{{^pagination}}List<{{name.pascalCase()}}Entity>{{/pagination}}>> read({
-    {{#pagination}}
+  FutureOr<Either<Failure, {{#pagination}}{{name.pascalCase()}}EntityPaginatedResponse{{/pagination}}{{^pagination}}List<{{name.pascalCase()}}Entity>{{/pagination}}>> read(
+    {{#pagination}}{
     required int page,
     required int limit,
-    {{/pagination}}
-  });
+    }{{/pagination}}
+  );
 
-  FutureOr<Either<Failure, {{#pagination}}{{name.pascalCase()}}EntityPaginatedResponse{{/pagination}}{{^pagination}}List<{{name.pascalCase()}}Entity>{{/pagination}}>> refresh({
-    {{#pagination}}
+  FutureOr<Either<Failure, {{#pagination}}{{name.pascalCase()}}EntityPaginatedResponse{{/pagination}}{{^pagination}}List<{{name.pascalCase()}}Entity>{{/pagination}}>> refresh(
+    {{#pagination}}{
     required int page,
     required int limit,
-    {{/pagination}}
-  });
+    }{{/pagination}}
+  );
   
   FutureOr<Either<Failure, {{#pagination}}{{name.pascalCase()}}EntityPaginatedResponse{{/pagination}}{{^pagination}}List<{{name.pascalCase()}}Entity>{{/pagination}}>> search({
     {{#pagination}}

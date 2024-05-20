@@ -19,4 +19,6 @@ export 'domain/usecases/update.dart';
 
 export 'presentation/bloc/create_bloc.dart';
 
+export 'presentation/bloc/update_bloc.dart';
+
 export 'presentation/pages/review.dart';

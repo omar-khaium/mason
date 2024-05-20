@@ -9,10 +9,22 @@ Future<void> get reviewDependencies async {
     ),
   );
 
+  sl.registerFactory(
+    () => UpdateReviewBloc(
+      useCase: sl(),
+    ),
+  );
+
   //! ----------------- UseCase -----------------
 
   sl.registerFactory(
     () => CreateReviewUseCase(
+      repository: sl(),
+    ),
+  );
+
+  sl.registerFactory(
+    () => UpdateReviewUseCase(
       repository: sl(),
     ),
   );
