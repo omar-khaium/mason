@@ -17,6 +17,6 @@ export 'domain/usecases/refresh.dart';
 export 'domain/usecases/search.dart';
 export 'domain/usecases/update.dart';
 
-{{#blocs}}
-export 'presentation/bloc/{{.}}_bloc.dart';
-{{/blocs}}
+{{#blocs}}export 'presentation/bloc/{{.}}_bloc.dart';
+{{/blocs}}{{#page}}
+export 'presentation/pages/{{name.snakeCase()}}.dart';{{/page}}

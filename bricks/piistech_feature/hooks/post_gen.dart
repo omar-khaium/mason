@@ -34,20 +34,18 @@ void run(HookContext context) async {
   }
   await dependencyFile.writeAsString('$dependencyBuffer');
 
-  if (context.vars['extension']) {
-    final configBuffer = StringBuffer();
-    final configFile = File('lib/core/config/config.dart');
-    await for (final line in readLines(configFile)) {
-      if (line != 'import \'../../features/${name.snakeCase}/${name.snakeCase}.dart\';' &&
-          line != 'part \'dependencies/${name.snakeCase}.dart\';') {
-        configBuffer.writeln(line);
-      }
-      if (line.contains('//! mason:linking-imports')) {
-        configBuffer.writeln('import \'../../features/${name.snakeCase}/${name.snakeCase}.dart\';');
-      }
-      if (line.contains('//! mason:linking-dependencies')) {
-        configBuffer.writeln('part \'dependencies/${name.snakeCase}.dart\';');
-      }
+  final configBuffer = StringBuffer();
+  final configFile = File('lib/core/config/config.dart');
+  await for (final line in readLines(configFile)) {
+    if (line != 'import \'../../features/${name.snakeCase}/${name.snakeCase}.dart\';' &&
+        line != 'part \'dependencies/${name.snakeCase}.dart\';') {
+      configBuffer.writeln(line);
+    }
+    if (line.contains('//! mason:linking-imports')) {
+      configBuffer.writeln('import \'../../features/${name.snakeCase}/${name.snakeCase}.dart\';');
+    }
+    if (line.contains('//! mason:linking-dependencies')) {
+      configBuffer.writeln('part \'dependencies/${name.snakeCase}.dart\';');
     }
     await configFile.writeAsString('$configBuffer');
   }

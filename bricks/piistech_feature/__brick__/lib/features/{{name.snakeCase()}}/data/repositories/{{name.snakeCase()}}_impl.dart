@@ -47,7 +47,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
   }) async {
     try {
       if(await network.online){
-        final result = remote.delete(
+        await remote.delete(
           {{#identifier}}
           guid: guid,
           {{/identifier}}
@@ -66,7 +66,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
         );
         {{/local}}
 
-        return Right(result);
+        return const Right(null);
       }
       else{
         return Left(NoInternetFailure());
@@ -106,13 +106,13 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
           id: id,
           {{/identifier}}
         );
+
+        return Right(result);
       }
       else{
         return Left(NoInternetFailure());
       }
       {{/local}}
-
-      return Right(result);
     } on {{name.pascalCase()}}NotFoundInLocalCacheFailure catch (_) {
       {{#local}}
       if(await network.online){
@@ -131,7 +131,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
       }
       {{/local}}
       {{^local}} 
-      return Left(e);
+      return Left(_);
       {{/local}}
     } on Failure catch (e) {
       return Left(e);

@@ -1,0 +1,19 @@
+import '../../../../core/shared/shared.dart';
+
+class {{name.pascalCase()}}Page extends StatelessWidget {
+  static const String path = '/';
+  static const String name = '{{name.pascalCase()}}Page';
+  const {{name.pascalCase()}}Page({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ThemeBloc, ThemeState>(
+      builder: (context, state) {
+        final theme = state.scheme;
+        return Scaffold(
+          backgroundColor: theme.backgroundPrimary,
+          body: Placeholder();
+      },
+    );
+  }
+}

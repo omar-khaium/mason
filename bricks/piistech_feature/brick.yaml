@@ -1,6 +1,6 @@
 name: piistech_feature
 description: A new brick to generate feature with Clean Architecture styling.
-version: 0.1.2+1
+version: 0.1.5+1
 repository: https://github.com/piistech/mason.git
 
 environment:
@@ -36,3 +36,8 @@ vars:
     type: array
     prompt: What are the blocs do you need for this feature?
     values: [create, update, delete, search, find, read, refresh]
+
+  page:
+    type: boolean
+    default: true
+    prompt: Do you need a page for this feature?
