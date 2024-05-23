@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6+4
+
+- Pagination response refactored.
+
 ## 0.1.6+3
 
 - Repository implementation bug fixes.

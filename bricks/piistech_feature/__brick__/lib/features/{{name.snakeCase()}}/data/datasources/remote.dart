@@ -1,10 +1,10 @@
 import '../../../../core/shared/shared.dart';
 import '../../{{name.snakeCase()}}.dart';
 
-typedef {{name.pascalCase()}}ModelPaginatedResponse = ({
+{{#pagination}}typedef {{name.pascalCase()}}ModelPaginatedResponse = ({
   List<{{name.pascalCase()}}Model> items,
   int total,
-});
+});{{/pagination}}
 
 abstract class {{name.pascalCase()}}RemoteDataSource {
   FutureOr<void> create({
