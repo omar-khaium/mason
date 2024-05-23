@@ -1,6 +1,6 @@
 name: piistech_feature
 description: A new brick to generate feature with Clean Architecture styling.
-version: 0.1.6+2
+version: 0.1.6+3
 repository: https://github.com/piistech/mason.git
 
 environment:

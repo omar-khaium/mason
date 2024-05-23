@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6+3
+
+- Repository implementation bug fixes.
+
 ## 0.1.6+2
 
 - Failure file name bug fixes.

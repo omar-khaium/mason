@@ -95,6 +95,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
         id: id,
         {{/identifier}}
       );
+      return Right(result);
       {{/local}}
       {{^local}} 
       if(await network.online){
@@ -154,7 +155,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
           {{/pagination}}
         );
         {{#local}}
-        await local.addAll(items: result.items);
+        await local.addAll(items: result{{#pagination}}.items{{/pagination}});
         {{/local}}
 
         {{#pagination}}
@@ -190,7 +191,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
           {{/pagination}}        
         );
         {{#local}}
-        await local.addAll(items: result.items);
+        await local.addAll(items: result{{#pagination}}.items{{/pagination}});
         {{/local}}
 
         {{#pagination}}
@@ -226,7 +227,7 @@ class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repositor
           query: query,
         );
         {{#local}}
-        await local.addAll(items: result.items);
+        await local.addAll(items: result{{#pagination}}.items{{/pagination}});
         {{/local}}
 
 
