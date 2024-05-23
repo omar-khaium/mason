@@ -1,4 +1,10 @@
-# 0.1.0+1
+# Changelog
+
+## 0.1.0+2
+
+- Update native splash screen package.
+
+## 0.1.0+1
 
 - Splash screen support.
 - Dependency injection support.

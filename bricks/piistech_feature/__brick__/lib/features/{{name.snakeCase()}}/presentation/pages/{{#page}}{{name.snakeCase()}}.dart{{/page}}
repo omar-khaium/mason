@@ -1,7 +1,7 @@
 import '../../../../core/shared/shared.dart';
 
 class {{name.pascalCase()}}Page extends StatelessWidget {
-  static const String path = '/';
+  static const String path = '/{{name.paramCase()}}';
   static const String name = '{{name.pascalCase()}}Page';
   const {{name.pascalCase()}}Page({super.key});
 
@@ -12,7 +12,8 @@ class {{name.pascalCase()}}Page extends StatelessWidget {
         final theme = state.scheme;
         return Scaffold(
           backgroundColor: theme.backgroundPrimary,
-          body: Placeholder();
+          body: Placeholder(),
+        );
       },
     );
   }

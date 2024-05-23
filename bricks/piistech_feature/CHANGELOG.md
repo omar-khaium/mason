@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.6+2
+
+- Failure file name bug fixes.
+
+## 0.1.6+1
+
+- Presentation page UI code bug fixes.
+
 ## 0.1.5+1
 
 - Added presentation/page support.
