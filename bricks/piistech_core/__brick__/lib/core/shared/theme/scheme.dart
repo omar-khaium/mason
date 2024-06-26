@@ -6,17 +6,13 @@ class ThemeScheme {
   final Color backgroundTertiary;
   final Color textPrimary;
   final Color textSecondary;
-  final Color textTossPrimary;
   final Color positive;
+  final Color positiveBackground;
+  final Color positiveBackgroundTertiary;
+  final Color primary;
   final Color negative;
-  final Color live;
   final Color warning;
-  final Color scoreCardBottom;
-  final Color pink;
-  final Color white;
-  final Color playButton;
-  final Color shimmerColor;
-  final Gradient gradient;
+  final Color shimmer;
 
   ThemeScheme({
     required this.backgroundPrimary,
@@ -24,49 +20,31 @@ class ThemeScheme {
     required this.backgroundTertiary,
     required this.textPrimary,
     required this.textSecondary,
+    required this.primary,
     required this.positive,
+    required this.positiveBackground,
+    required this.positiveBackgroundTertiary,
     required this.negative,
-    required this.live,
     required this.warning,
-    required this.textTossPrimary,
-    required this.scoreCardBottom,
-    required this.pink,
-    required this.white,
-    required this.gradient,
-    required this.playButton,
-    required this.shimmerColor,
+    required this.shimmer,
   });
 
   factory ThemeScheme.find({
     required ThemeType type,
   }) {
     final theme = ThemeScheme(
-      backgroundPrimary: const Color(0xFF0C131D),
-      backgroundSecondary: const Color(0xFF15212D),
-      backgroundTertiary: const Color(0xFF2C5370),
-      textPrimary: const Color(0xFFCCD0D3),
-      textSecondary: const Color(0xFF919496),
-      textTossPrimary: const Color(0xFFFFAF40),
-      positive: const Color(0xFF00FB64),
-      negative: const Color(0xFFFF2C2C),
-      live: const Color(0xFFFF2C2C),
-      warning: const Color(0xFFFDDD00),
-      scoreCardBottom: const Color(0xFF00BAFF),
-      pink: const Color(0xFFC521FF),
-      playButton: const Color(0xFFD9D9D9),
-      white: const Color(0xFFFFFFFF),
-      shimmerColor: Colors.grey.shade700,
-      gradient: const LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        stops: [0.04, 0.26, 0.68, 1.0],
-        colors: [
-          Color(0xFF0C131D),
-          Colors.transparent,
-          Colors.transparent,
-          Color(0xFF0C131D),
-        ],
-      ),
+      backgroundPrimary: const Color(0xFFfffceb),
+      backgroundSecondary: const Color(0xFFfff7d1),
+      backgroundTertiary: const Color(0xFFfff3b7),
+      textPrimary: const Color(0xFF2d2a32),
+      textSecondary: const Color(0xFF5e5b52),
+      primary: const Color(0xFFffd500),
+      positive: const Color(0xFF3a7d44),
+      positiveBackground: const Color.fromARGB(255, 236, 239, 219),
+      positiveBackgroundTertiary: const Color.fromARGB(255, 203, 221, 196),
+      negative: const Color(0xFFfd0054),
+      warning: const Color(0xFFff8000),
+      shimmer: const Color(0xFFffea83),
     );
 
     return theme;
