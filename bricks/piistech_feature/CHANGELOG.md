@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0+5
+
+- Extension reference added to shared file.
+
 ## 0.1.6+4
 
 - Pagination response refactored.

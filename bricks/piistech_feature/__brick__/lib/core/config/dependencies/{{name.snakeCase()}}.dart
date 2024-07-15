@@ -2,8 +2,7 @@ part of '../config.dart';
 
 Future<void> get {{name.camelCase()}}Dependencies async {
   //! ----------------- Bloc -----------------
-  {{#blocs}}
-  sl.registerFactory(
+  {{#blocs}}sl.registerFactory(
     () => {{#pascalCase}}{{{.}}}{{/pascalCase}}{{name.pascalCase()}}Bloc(
       useCase: sl(),
     ),
@@ -11,8 +10,7 @@ Future<void> get {{name.camelCase()}}Dependencies async {
   {{/blocs}}
 
   //! ----------------- UseCase -----------------
-  {{#blocs}}
-  sl.registerFactory(
+  {{#blocs}}sl.registerFactory(
     () => {{#pascalCase}}{{{.}}}{{/pascalCase}}{{name.pascalCase()}}UseCase(
       repository: sl(),
     ),
@@ -35,8 +33,7 @@ Future<void> get {{name.camelCase()}}Dependencies async {
     ),
   );
 
-  {{#local}}
-  sl.registerLazySingleton<{{name.pascalCase()}}LocalDataSource>(
+  {{#local}}sl.registerLazySingleton<{{name.pascalCase()}}LocalDataSource>(
     () => {{name.pascalCase()}}LocalDataSourceImpl(),
   );
   {{/local}}
