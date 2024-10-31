@@ -1,4 +1,4 @@
-app_identifier('"'{{bundle_id}}'"')
+app_identifier("{{bundle_id}}")
 apple_id("<your@email.here>")
 
 itc_team_id("team_id_int")

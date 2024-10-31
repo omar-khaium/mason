@@ -1,2 +1,2 @@
 json_key_file("fastlane/fastlane-supply.json")
-package_name('"'{{bundle_id}}'"')
+package_name("{{bundle_id}}")
