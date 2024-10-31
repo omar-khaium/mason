@@ -24,7 +24,7 @@ class ShimmerLabel extends StatelessWidget {
         return Container(
           margin: margin ?? EdgeInsets.zero,
           child: PhysicalModel(
-            color: delete ? theme.negative : theme.shimmerColor,
+            color: delete ? theme.negative : theme.shimmer,
             borderRadius: BorderRadius.circular(radius),
             clipBehavior: Clip.antiAliasWithSaveLayer,
             child: SizedBox(

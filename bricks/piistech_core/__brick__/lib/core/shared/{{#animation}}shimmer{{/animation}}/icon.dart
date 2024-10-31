@@ -19,7 +19,7 @@ class ShimmerIcon extends StatelessWidget {
           width: radius,
           height: radius,
           decoration: BoxDecoration(
-            color: delete ? theme.negative : theme.shimmerColor,
+            color: delete ? theme.negative : theme.shimmer,
             shape: BoxShape.circle,
           ),
         )
