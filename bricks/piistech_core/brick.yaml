@@ -2,12 +2,16 @@ name: piistech_core
 description: A new brick to generate the core of the app complying with Clean Architecture.
 repository: https://github.com/piistech/mason.git
 
-version: 0.1.1+3
+version: 0.2.1+21
 
 environment:
   mason: ">=0.1.0-dev.53 <0.1.0"
 
 vars:
+  bundle_id:
+    type: string
+    prompt: What is your app's unique bundle ID?
+
   splash_screen:
     type: boolean
     default: false
@@ -23,7 +27,12 @@ vars:
     default: false
     prompt: Is your app responsive?
 
-  notification:
+  in_app_update:
     type: boolean
     default: false
-    prompt: Do you need notification?
+    prompt: Do you want to implement in-app update feature?
+
+  fastlane:
+    type: boolean
+    default: false
+    prompt: Do you need fastlane support?

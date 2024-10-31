@@ -1,0 +1,10 @@
+import '../../../../core/shared/shared.dart';
+import '../../{{name.snakeCase()}}.dart';
+
+abstract class {{name.pascalCase()}}RemoteDataSource {
+  {{#blocs}}
+  FutureOr<void> {{#camelCase}}{{{.}}}{{/camelCase}}({{#auth}}{
+    required String token,
+  }{{/auth}});
+  {{/blocs}}
+}

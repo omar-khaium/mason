@@ -22,17 +22,19 @@ void run(HookContext context) async {
   await failureFile.writeAsString('$failureBuffer');
 
   // Add extension class
-  final extensionBuffer = StringBuffer();
-  final extensionFile = File('lib/core/shared/shared.dart');
-  await for (final line in readLines(extensionFile)) {
-    if (line != 'export \'extension/\'${name.snakeCase}.dart\';') {
-      extensionBuffer.writeln(line);
+  if (context.vars['extension'] as bool) {
+    final extensionBuffer = StringBuffer();
+    final extensionFile = File('lib/core/shared/shared.dart');
+    await for (final line in readLines(extensionFile)) {
+      if (line != 'export \'extension/\'${name.snakeCase}.dart\';') {
+        extensionBuffer.writeln(line);
+      }
+      if (line.contains('//! mason:linking-extensions')) {
+        extensionBuffer.writeln('export \'extension/${name.snakeCase}.dart\';');
+      }
     }
-    if (line.contains('//! mason:linking-extensions')) {
-      extensionBuffer.writeln('export \'extension/\'${name.snakeCase}.dart\';');
-    }
+    await extensionFile.writeAsString('$extensionBuffer');
   }
-  await extensionFile.writeAsString('$extensionBuffer');
 
   // Add dependency relation
   final dependencyBuffer = StringBuffer();

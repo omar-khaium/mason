@@ -22,8 +22,7 @@ class NetworkInfoImpl implements NetworkInfo {
   Duration get checkTimeout => const Duration(seconds: 5);
 
   @override
-  Future<InternetConnectionStatus> get connectionStatus =>
-      internetConnectionChecker.connectionStatus;
+  Future<InternetConnectionStatus> get connectionStatus => internetConnectionChecker.connectionStatus;
 
   @override
   Future<bool> get hasConnection => internetConnectionChecker.hasConnection;
@@ -38,10 +37,8 @@ class NetworkInfoImpl implements NetworkInfo {
   Future<bool> get online => internetConnectionChecker.hasConnection;
 
   @override
-  Future<AddressCheckResult> isHostReachable(AddressCheckOptions options) =>
-      internetConnectionChecker.isHostReachable(options);
+  Future<AddressCheckResult> isHostReachable(AddressCheckOptions options) => internetConnectionChecker.isHostReachable(options);
 
   @override
-  Stream<InternetConnectionStatus> get onStatusChange =>
-      internetConnectionChecker.onStatusChange;
+  Stream<InternetConnectionStatus> get onStatusChange => internetConnectionChecker.onStatusChange;
 }

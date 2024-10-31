@@ -4,7 +4,7 @@ import '../../{{name.snakeCase()}}.dart';
 class {{name.pascalCase()}}Model extends {{name.pascalCase()}}Entity {
   // TODO: implement model properties
   {{name.pascalCase()}}Model({
-    required super.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}},
+    required super.identity,
   });
 
   factory {{name.pascalCase()}}Model.parse({

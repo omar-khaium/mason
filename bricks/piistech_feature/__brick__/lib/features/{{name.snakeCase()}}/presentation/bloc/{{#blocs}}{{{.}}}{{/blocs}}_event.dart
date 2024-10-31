@@ -7,11 +7,8 @@ abstract class {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.p
   List<Object> get props => [];
 }
 class {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}} extends {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Event {
-  final {{name.pascalCase()}}Entity {{name.camelCase()}};
 
-  const {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}({
-    required this.{{name.camelCase()}},
-  });
+  const {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}();
     @override
-  List<Object> get props => [{{name.camelCase()}}];
+  List<Object> get props => [];
 }

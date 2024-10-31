@@ -9,10 +9,10 @@ class {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase
   {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Bloc({required this.useCase}) : super(const {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Initial()) {
     on<{{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}>((event, emit) async {
       emit(const {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Loading());
-      final result = await useCase({{name.camelCase()}}: event.{{name.camelCase()}});
+      final result = await useCase();
       result.fold(
         (failure) => emit({{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Error(failure: failure)),
-        ({{name.camelCase()}}) => emit({{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Done({{name.camelCase()}}: {{name.camelCase()}})),
+        ({{name.camelCase()}}) => emit({{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Done()),
       );
     });
   }

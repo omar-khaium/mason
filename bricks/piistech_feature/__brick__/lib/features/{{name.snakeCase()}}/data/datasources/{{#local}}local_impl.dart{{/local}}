@@ -2,41 +2,29 @@ import '../../../../core/shared/shared.dart';
 import '../../{{name.snakeCase()}}.dart';
 
 class {{name.pascalCase()}}LocalDataSourceImpl extends {{name.pascalCase()}}LocalDataSource {
-  final Map<{{#identifier}}String{{/identifier}}{{^identifier}}int{{/identifier}}, {{name.pascalCase()}}Entity> _cache = {};
+  final Map<String, {{name.pascalCase()}}Entity> _cache = {};
 
   @override
   FutureOr<void> add({
+    required Identity identity,
     required {{name.pascalCase()}}Entity {{name.camelCase()}},
   }) {
-    _cache[{{name.camelCase()}}.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}] = {{name.camelCase()}};    
-  }
-
-  @override
-  FutureOr<void> addAll({
-    required List<{{name.pascalCase()}}Entity> items,
-  }) {
-    for (final item in items) {
-      _cache[item.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}] = item;
-    }
+    _cache[identity.guid] = {{name.camelCase()}};    
   }
 
   @override
   FutureOr<void> update({
+    required Identity identity,
     required {{name.pascalCase()}}Entity {{name.camelCase()}},
   }) {
-    _cache[{{name.camelCase()}}.{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}] = {{name.camelCase()}};    
+    _cache[identity.guid] = {{name.camelCase()}};    
   }
 
   @override
   FutureOr<void> remove({
-    {{#identifier}}
-    required String guid,
-    {{/identifier}}
-    {{^identifier}}
-    required int id,
-    {{/identifier}}
+    required Identity identity,
   }) {
-    _cache.remove({{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}});    
+    _cache.remove(identity.guid);    
   }
 
   @override
@@ -46,14 +34,9 @@ class {{name.pascalCase()}}LocalDataSourceImpl extends {{name.pascalCase()}}Loca
 
   @override
   FutureOr<{{name.pascalCase()}}Entity> find({
-    {{#identifier}}
-    required String guid,
-    {{/identifier}}
-    {{^identifier}}
-    required int id,
-    {{/identifier}}
+    required Identity identity,
   }) {
-    final item = _cache[{{#identifier}}guid{{/identifier}}{{^identifier}}id{{/identifier}}];
+    final item = _cache[identity.guid];
     if (item == null) {
       throw {{name.pascalCase()}}NotFoundInLocalCacheFailure();
     }

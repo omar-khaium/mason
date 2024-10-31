@@ -8,8 +8,8 @@ void run(HookContext context) async {
         runInShell: true);
     progress.complete();
   }
-  if (context.vars['animation'] as bool) {
-    final progress = context.logger.progress('Adding animation support...');
+  if (context.vars['in_app_update'] as bool) {
+    final progress = context.logger.progress('Adding in-app update support...');
     await Process.run('flutter', ['pub', 'add', 'flutter_animate'],
         runInShell: true);
     progress.complete();

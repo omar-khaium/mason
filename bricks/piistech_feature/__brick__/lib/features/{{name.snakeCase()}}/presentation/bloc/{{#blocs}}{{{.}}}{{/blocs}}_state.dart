@@ -27,10 +27,9 @@ class {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase
 }
 
 class {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Done extends {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}State {
-  final {{name.pascalCase()}}Entity {{name.camelCase()}};
 
-  const {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Done({required this.{{name.camelCase()}}});
+  const {{#pascalCase}}{{#blocs}}{{{.}}}{{/blocs}}{{/pascalCase}}{{name.pascalCase()}}Done();
 
   @override
-  List<Object> get props => [{{name.camelCase()}}];
+  List<Object> get props => [];
 }

@@ -1,6 +1,6 @@
 name: piistech_feature
 description: A new brick to generate feature with Clean Architecture styling.
-version: 0.2.0+5
+version: 0.2.4+24
 repository: https://github.com/piistech/mason.git
 
 environment:
@@ -15,27 +15,39 @@ vars:
   local:
     type: boolean
     default: false
-    prompt: Does the feature need a local data source?
+    prompt: Does your feature need a local cache?
+
+  remote:
+    type: boolean
+    default: false
+    prompt: Does your feature communicates with API?
+
+  auth:
+    type: boolean
+    default: false
+    prompt: Does your feature requires authentication token to communicate with API?
 
   extension:
     type: boolean
     default: false
     prompt: Does the feature requires extension?
 
-  identifier:
-    type: boolean
-    default: true
-    prompt: Is your identifier GUID based?
-
-  pagination:
-    type: boolean
-    default: true
-    prompt: Do you need pagination?
-
   blocs:
     type: array
     prompt: What are the blocs do you need for this feature?
-    values: [create, update, delete, search, find, read, refresh]
+    values:
+      [
+        find,
+        refresh,
+        find_all,
+        refresh_all,
+        create,
+        update,
+        delete,
+        search,
+        sync,
+        change,
+      ]
 
   page:
     type: boolean
