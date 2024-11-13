@@ -22,7 +22,8 @@ Future<void> get {{name.camelCase()}}Dependencies async {
     () => {{name.pascalCase()}}RepositoryImpl(
       network: sl(),
       remote: sl(),{{#local}}
-      local: sl(),{{/local}}
+      local: sl(),{{/local}}{{#auth}}
+      auth: sl(),{{/auth}}
     ),
   );
 

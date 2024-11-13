@@ -1,17 +1,18 @@
-import '../../../../core/shared/shared.dart';
+import '../../../../core/shared/shared.dart';{{#auth}}
+import '../../../authentication/authentication.dart';{{/auth}}
 import '../../{{name.snakeCase()}}.dart';
 
 class {{name.pascalCase()}}RepositoryImpl extends {{name.pascalCase()}}Repository {
-  final NetworkInfo network;
-  {{#auth}}final AuthenticationBloc auth;{{/auth}}
-  {{#local}}final {{name.pascalCase()}}LocalDataSource local;{{/local}}
-  {{#remote}}final {{name.pascalCase()}}RemoteDataSource remote;{{/remote}}
+  final NetworkInfo network;{{#auth}}
+  final AuthenticationBloc auth;{{/auth}}{{#local}}
+  final {{name.pascalCase()}}LocalDataSource local;{{/local}}{{#remote}}
+  final {{name.pascalCase()}}RemoteDataSource remote;{{/remote}}
 
   {{name.pascalCase()}}RepositoryImpl({
-    required this.network,
-    {{#auth}}required this.auth,{{/auth}}
-    {{#local}}required this.local,{{/local}}
-    {{#remote}}required this.remote,{{/remote}}
+    required this.network,{{#auth}}
+    required this.auth,{{/auth}}{{#local}}
+    required this.local,{{/local}}{{#remote}}
+    required this.remote,{{/remote}}
   });
 
 /*
