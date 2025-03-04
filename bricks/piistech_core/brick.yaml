@@ -2,10 +2,10 @@ name: piistech_core
 description: A new brick to generate the core of the app complying with Clean Architecture.
 repository: https://github.com/piistech/mason.git
 
-version: 0.2.3+23
+version: 0.2.5+25
 
 environment:
-  mason: ">=0.1.0-dev.53 <0.1.0"
+  mason: ">=0.1.1 <0.2.0"
 
 vars:
   bundle_id:
